@@ -1,5 +1,5 @@
 import React from 'react';
-import MenuItem from '../MenuItem';
+import MenuItem from '../Menu-Item/MenuItem';
 import './directory.styles.scss';
 
 class Directory extends React.Component {
@@ -39,7 +39,7 @@ class Directory extends React.Component {
                 id: 5,
                 linkUrl: ''
             }]
-        }
+        };
     }
 
     render() {

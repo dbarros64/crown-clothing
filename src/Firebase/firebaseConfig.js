@@ -44,15 +44,15 @@ const firebaseConfig = {
   provider.setCustomParameters({ prompt: 'select_account'})
 
   export const signInWithGoogle = () => auth.signInWithPopup(provider);
-  firebase.auth()
-    .getRedirectResult()
-    .then((result) => {
-        if(result.credential) {
-            // let credential = result.credential;
-            // const authToken = credential.accessToken;
-        }
-    }).catch((error) => {
-        console.log('error', error.message);
-    })
+//   firebase.auth()
+//     .getRedirectResult()
+//     .then((result) => {
+//         if(result.credential) {
+//             // let credential = result.credential;
+//             // const authToken = credential.accessToken;
+//         }
+//     }).catch((error) => {
+//         console.log('error', error.message);
+//     })
 
     export default firebase;

@@ -7,7 +7,8 @@ import ShopPage from './Pages/ShopPage/ShopPage'
 import Header from './Components/Header/Header';
 import SignInAndSignUp from './Pages/SignIn-and-SignUp/SignIn-and-SignUp';
 import { auth, createUserProfileDocument } from './Firebase/firebase.config';
-import { currentUser, setCurrentUser } from './Redux/User/user.actions';
+// eslint-disable-next-line
+import {  currentUser, setCurrentUser } from './Redux/User/user.actions';
 import './App.css';
 
 

@@ -5,10 +5,13 @@ import { connect } from 'react-redux';
 import HomePage from './Pages/HomePage/HomePage';
 import ShopPage from './Pages/ShopPage/ShopPage'
 import Header from './Components/Header/Header';
+import CheckOut from './Pages/CheckOut/CheckOut';
+
 import SignInAndSignUp from './Pages/SignIn-and-SignUp/SignIn-and-SignUp';
 import { auth, createUserProfileDocument } from './Firebase/firebase.config';
-// eslint-disable-next-line
-import {  currentUser, setCurrentUser } from './Redux/User/user.actions';
+import { setCurrentUser } from './Redux/User/user.actions';
+import { selectCurrentUser } from './Redux/User/user.selector';
+import { createStructuredSelector } from 'reselect';
 import './App.css';
 
 
@@ -51,6 +54,7 @@ class App extends React.Component {
       <Switch>
         <Route exact path='/' component={HomePage} />
         <Route path='/shop' component={ShopPage} />
+        <Route exact path='/checkout' component={CheckOut} />
         <Route exact path='/signin' 
           render={() => 
           this.props.currentUser ? 
@@ -62,8 +66,8 @@ class App extends React.Component {
  
 }
 
-const mapStateToProps = ({ user }) => ({
-  currentUser: user.currentUser
+const mapStateToProps = createStructuredSelector({
+  currentUser: selectCurrentUser
 });
 
 const mapDispatchToProps = dispatch => ({
